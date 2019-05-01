@@ -1,0 +1,10 @@
+java_library(
+    name = "puml",
+    srcs = glob(["*.java"]),
+    javacopts = ["-Werror"],
+    resources = ["//src/main/resources"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//third-party/generated/deps/io/dropwizard:dropwizard_core",
+    ],
+)

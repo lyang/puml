@@ -1,0 +1,5 @@
+java_binary(
+    name = "puml",
+    main_class = "lyang.puml.PumlApplication",
+    runtime_deps = ["//src/main/java/lyang/puml"],
+)
