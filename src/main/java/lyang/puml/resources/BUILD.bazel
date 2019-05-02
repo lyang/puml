@@ -6,5 +6,6 @@ java_library(
     deps = [
         "//third-party/generated/deps/com/squareup/okhttp3:okhttp",
         "//third-party/generated/deps/javax/ws/rs:javax_ws_rs_api",
+        "//third-party/generated/deps/net/sourceforge/plantuml",
     ],
 )
