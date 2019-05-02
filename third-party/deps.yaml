@@ -8,6 +8,11 @@ options:
   thirdPartyDirectory: "third-party/generated/deps"
 
 dependencies:
+  com.squareup.okhttp3:
+    okhttp:
+      lang: java
+      version: "3.14.1"
+
   io.dropwizard:
     dropwizard-core:
       lang: java
