@@ -1,7 +1,7 @@
 java_library(
     name = "validation_api",
     visibility = [
-        "//third-party/generated/deps:__subpackages__",
+        "//visibility:public",
     ],
     exports = [
         "//external:jar/javax/validation/validation_api",

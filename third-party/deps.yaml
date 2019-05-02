@@ -23,6 +23,11 @@ dependencies:
       lang: java
       version: "1"
 
+  javax.validation:
+    validation-api:
+      lang: java
+      version: "2.0.1.Final"
+
   javax.ws.rs:
     javax.ws.rs-api:
       lang: java
