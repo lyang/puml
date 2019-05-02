@@ -1,0 +1,10 @@
+logging:
+  level: INFO
+server:
+  applicationConnectors:
+    - type: http
+      port: ${PORT}
+githubConfigs:
+  targets:
+    gh:
+      endpoint: api.github.com

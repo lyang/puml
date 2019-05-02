@@ -1,5 +1,42 @@
+load("@io_bazel_rules_docker//container:container.bzl", "container_image", "container_push")
+
 java_binary(
     name = "puml",
     main_class = "lyang.puml.PumlApplication",
     runtime_deps = ["//src/main/java/lyang/puml"],
+)
+
+container_image(
+    name = "docker",
+    base = "@base//image",
+    cmd = [
+        "server",
+        "config.yaml",
+    ],
+    directory = "/app",
+    entrypoint = [
+        "./app.sh",
+    ],
+    files = [
+        ":app.sh",
+        ":config.yaml",
+        ":puml",
+        ":puml_deploy.jar",
+    ],
+    ports = [
+        "8080",
+        "8081",
+    ],
+    repository = "puml",
+    stamp = True,
+    workdir = "/app",
+)
+
+container_push(
+    name = "docker-push",
+    format = "Docker",
+    image = ":docker",
+    registry = "index.docker.io",
+    repository = "linyang1218/puml",
+    tag = "{STABLE_BUILD_REVISION}",
 )
