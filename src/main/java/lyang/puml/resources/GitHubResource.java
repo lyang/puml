@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import net.sourceforge.plantuml.SourceStringReader;
 
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -17,6 +18,12 @@ import okhttp3.Request;
 @Path("/github")
 public class GitHubResource {
   private static final String GITHUB_RAW_FORMAT = "application/vnd.github.v3.raw";
+  private OkHttpClient client;
+
+  @Inject
+  public GitHubResource(OkHttpClient client) {
+    this.client = client;
+  }
 
   @GET
   @Produces("image/png")
@@ -25,7 +32,7 @@ public class GitHubResource {
                       @PathParam("user") String user,
                       @PathParam("repo") String repo,
                       @PathParam("path") String path) throws IOException {
-    try (okhttp3.Response response = new OkHttpClient().newCall(buildRequest(host, user, repo, path)).execute()) {
+    try (okhttp3.Response response = client.newCall(buildRequest(host, user, repo, path)).execute()) {
       return Response.ok(render(response.body().string())).build();
     }
   }
