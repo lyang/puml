@@ -1,0 +1,9 @@
+java_library(
+    name = "resources",
+    srcs = glob(["*.java"]),
+    javacopts = ["-Werror"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//third-party/generated/deps/javax/ws/rs:javax_ws_rs_api",
+    ],
+)
