@@ -4,6 +4,7 @@ java_library(
     javacopts = ["-Werror"],
     visibility = ["//visibility:public"],
     deps = [
+        "//third-party/generated/deps/com/squareup/okhttp3:okhttp",
         "//third-party/generated/deps/javax/ws/rs:javax_ws_rs_api",
     ],
 )
