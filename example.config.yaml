@@ -1,0 +1,16 @@
+logging:
+  level: INFO
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+githubConfigs:
+  targets:
+    gh:
+      endpoint: api.github.com
+    ghe:
+      endpoint: github.mycompany.com/api/v3
+      apiToken: ${MY_GHE_API_TOKEN}

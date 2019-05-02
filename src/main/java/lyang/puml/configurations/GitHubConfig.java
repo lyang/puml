@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 public class GitHubConfig {
   public Map<String, Config> targets;
 
-  public class Config {
+  public static class Config {
     @NotNull
     public String endpoint;
 

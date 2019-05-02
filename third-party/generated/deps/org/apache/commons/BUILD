@@ -11,7 +11,7 @@ java_library(
 java_library(
     name = "commons_text",
     visibility = [
-        "//third-party/generated/deps:__subpackages__",
+        "//visibility:public",
     ],
     exports = [
         ":commons_lang3",

@@ -4,6 +4,8 @@ import com.google.inject.Injector;
 
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
+import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
+import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import lyang.puml.resources.GitHubResource;
@@ -20,6 +22,9 @@ public class PumlApplication extends Application<PumlConfiguration> {
   public void initialize(Bootstrap<PumlConfiguration> bootstrap) {
     guiceBundle = GuiceBundle.builder().modules(new PumlModule()).build();
     bootstrap.addBundle(guiceBundle);
+    SubstitutingSourceProvider sourceProvider =
+      new SubstitutingSourceProvider(bootstrap.getConfigurationSourceProvider(), new EnvironmentVariableSubstitutor());
+    bootstrap.setConfigurationSourceProvider(sourceProvider);
   }
 
   @Override
