@@ -21,4 +21,4 @@ caption Generated at %date[yyyy-MM-dd HH:mm:ss z]%
 @enduml
 ```
 
-![demo](https://puml-demo.herokuapp.com/github/gh/lyang/puml/README.md)
+[![demo](https://puml-demo.herokuapp.com/github/gh/lyang/puml/README.md)](https://puml-demo.herokuapp.com/github/gh/lyang/puml/README.md)
