@@ -1,4 +1,7 @@
 # puml
+Render diagrams from github.com / private GHE pages, using [plantuml](https://github.com/plantuml/plantuml).
+
+For example the following is rendered at the end of the page.
 
 ```
 @startuml
@@ -17,3 +20,5 @@ caption Generated at %date[yyyy-MM-dd HH:mm:ss z]%
 
 @enduml
 ```
+
+![demo](https://puml-demo.herokuapp.com/github/gh/lyang/puml/README.md)
