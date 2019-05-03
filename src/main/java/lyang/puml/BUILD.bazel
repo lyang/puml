@@ -9,6 +9,7 @@ java_library(
         "//src/main/java/lyang/puml/resources",
         "//third-party/generated/deps/com/squareup/okhttp3:okhttp",
         "//third-party/generated/deps/io/dropwizard:dropwizard_core",
+        "//third-party/generated/deps/javax/xml/bind:jaxb_api",
         "//third-party/generated/deps/ru/vyarus:dropwizard_guicey",
     ],
 )

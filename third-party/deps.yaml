@@ -33,6 +33,11 @@ dependencies:
       lang: java
       version: "2.1.1"
 
+  javax.xml.bind:
+    jaxb-api:
+      lang: java
+      version: "2.4.0-b180830.0359"
+
   net.sourceforge.plantuml:
     plantuml:
       lang: java
