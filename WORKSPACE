@@ -27,5 +27,5 @@ container_pull(
     name = "base",
     registry = "index.docker.io",
     repository = "linyang1218/java-graphviz",
-    tag = "1c4b749116aab761f6f84e85b1e533441d9d9563",
+    tag = "latest",
 )
