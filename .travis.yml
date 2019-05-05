@@ -1,15 +1,27 @@
+if: branch = master
 language: java
 jdk:
   - openjdk11
-  - oraclejdk11
+services:
+  - docker
+  - heroku
 env:
   - BAZEL_VERSION=0.25.0
-before_install:
+
+script:
   - |
     URL="https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
-    wget -O install.sh "${URL}"
+    wget -qO install.sh "${URL}"
     chmod +x install.sh
-    ./install.sh --user
+    ./install.sh --user > /dev/null
     rm -f install.sh
-script:
+  - curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+  - heroku container:login
+  - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
   - bazel run //:docker
+  - bazel run //:docker-push
+  - docker tag puml:docker $DOCKER_USERNAME/puml:latest
+  - docker tag puml:docker registry.heroku.com/$APP/web
+  - docker push $DOCKER_USERNAME/puml:latest
+  - docker push registry.heroku.com/$APP/web
+  - heroku container:release web --app $APP
