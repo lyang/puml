@@ -1,22 +1,16 @@
 package lyang.puml.resources;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.Date;
 import java.util.Optional;
-
-import net.sourceforge.plantuml.SourceStringReader;
-
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
-
 import lyang.puml.configurations.GitHubConfig;
+import lyang.puml.utils.Puml;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
@@ -43,10 +37,7 @@ public class GitHubResource {
       @PathParam("path") String path) throws IOException {
     Request request = buildRequest(target, user, repo, path);
     try (okhttp3.Response response = client.newCall(request).execute()) {
-      return Response.ok(render(response.body().string()))
-          .cacheControl(CacheControl.valueOf("no-cache"))
-          .expires(new Date(Long.MIN_VALUE))
-          .build();
+      return Puml.renderToResponse(response.body().string()).build();
     }
   }
 
@@ -59,11 +50,5 @@ public class GitHubResource {
     Optional.ofNullable(config.apiToken)
         .ifPresent(token -> builder.addHeader(HttpHeaders.AUTHORIZATION, "token " + token));
     return builder.build();
-  }
-
-  private byte[] render(String content) throws IOException {
-    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    new SourceStringReader(content).outputImage(outputStream);
-    return outputStream.toByteArray();
   }
 }
