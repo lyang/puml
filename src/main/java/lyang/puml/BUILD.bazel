@@ -5,7 +5,6 @@ java_library(
     resources = ["//src/main/resources"],
     visibility = ["//visibility:public"],
     deps = [
-        "//src/main/java/lyang/puml/configurations",
         "//src/main/java/lyang/puml/resources",
         "//third-party/generated/deps/com/squareup/okhttp3:okhttp",
         "//third-party/generated/deps/io/dropwizard:dropwizard_core",

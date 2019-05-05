@@ -1,9 +1,0 @@
-java_library(
-    name = "configurations",
-    srcs = glob(["*.java"]),
-    javacopts = ["-Werror"],
-    visibility = ["//visibility:public"],
-    deps = [
-        "//third-party/generated/deps/javax/validation:validation_api",
-    ],
-)

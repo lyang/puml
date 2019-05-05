@@ -4,7 +4,6 @@ java_library(
     javacopts = ["-Werror"],
     visibility = ["//visibility:public"],
     deps = [
-        "//src/main/java/lyang/puml/configurations",
         "//src/main/java/lyang/puml/utils",
         "//third-party/generated/deps/com/squareup/okhttp3:okhttp",
         "//third-party/generated/deps/javax/inject:javax_inject",
