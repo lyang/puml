@@ -45,7 +45,7 @@ public class GitHubResource {
     try (okhttp3.Response response = client.newCall(request).execute()) {
       return Response.ok(render(response.body().string()))
           .cacheControl(CacheControl.valueOf("no-cache"))
-          .expires(new Date())
+          .expires(new Date(Long.MIN_VALUE))
           .build();
     }
   }
