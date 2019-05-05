@@ -9,6 +9,7 @@ import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import lyang.puml.resources.GitHubResource;
+import lyang.puml.resources.RawResource;
 import ru.vyarus.dropwizard.guice.GuiceBundle;
 
 public class PumlApplication extends Application<PumlConfiguration> {
@@ -31,5 +32,6 @@ public class PumlApplication extends Application<PumlConfiguration> {
   public void run(PumlConfiguration configuration, Environment environment) {
     Injector injector = guiceBundle.getInjector();
     environment.jersey().register(injector.getInstance(GitHubResource.class));
+    environment.jersey().register(injector.getInstance(RawResource.class));
   }
 }
