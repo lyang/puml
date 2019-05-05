@@ -1,0 +1,15 @@
+language: java
+jdk:
+  - openjdk11
+  - oraclejdk11
+env:
+  - BAZEL_VERSION=0.25.0
+before_install:
+  - |
+    URL="https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
+    wget -O install.sh "${URL}"
+    chmod +x install.sh
+    ./install.sh --user
+    rm -f install.sh
+script:
+  - bazel run //:docker
