@@ -1,0 +1,12 @@
+java_library(
+    name = "configurations",
+    srcs = glob(["*.java"]),
+    javacopts = ["-Werror"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//third-party:freebuilder",
+        "//third-party/generated/deps/com/fasterxml/jackson/core:jackson_annotations",
+        "//third-party/generated/deps/com/fasterxml/jackson/core:jackson_databind",
+        "//third-party/generated/deps/com/squareup/okhttp3:okhttp",
+    ],
+)
