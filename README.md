@@ -29,3 +29,8 @@ caption Generated at %date[yyyy-MM-dd HH:mm:ss z]%
 @enduml
 ```
 [![demo](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2FREADME.md?pumlIndex=1)](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2FREADME.md?pumlIndex=1)
+
+## From protected sources
+Protected sources can be accessed by setting up credentials in config file, for [example](https://github.com/lyang/puml/blob/master/puml-demo.yaml)
+
+[![demo](http://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml-demo%2Fmaster%2FREADME.md)](http://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml-demo%2Fmaster%2FREADME.md)
