@@ -11,7 +11,7 @@ public class PumlModule extends AbstractModule {
   @Provides
   @Singleton
   OkHttpClient httpClient(AuthenticationHelper authenticationHelper) {
-    return new OkHttpClient.Builder().cache(null).addInterceptor(authenticationHelper).build();
+    return new OkHttpClient.Builder().addInterceptor(authenticationHelper).build();
   }
 
   @Provides
