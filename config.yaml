@@ -4,3 +4,4 @@ server:
   applicationConnectors:
     - type: http
       port: ${PORT}
+credentials: []
