@@ -1,0 +1,12 @@
+logging:
+  level: INFO
+server:
+  applicationConnectors:
+    - type: http
+      port: ${PORT}
+credentials:
+  - type: auth-header
+    headerName: Authorization
+    headerValue: token ${PUML_DEMO_API_TOKEN}
+    requestMatcher:
+      pattern: "^https://raw.githubusercontent.com/lyang/puml-demo/master/README.md$"

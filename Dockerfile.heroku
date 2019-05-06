@@ -1,0 +1,2 @@
+FROM linyang1218/puml:latest
+COPY puml-demo.yaml /app/config.yaml
