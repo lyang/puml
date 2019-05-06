@@ -1,0 +1,20 @@
+package(default_visibility = ["//visibility:public"])
+
+java_plugin(
+    name = "freebuilder_plugin",
+    generates_api = True,
+    processor_class = "org.inferred.freebuilder.processor.Processor",
+    deps = [
+        "//third-party/generated/deps/org/inferred:freebuilder",
+    ],
+)
+
+java_library(
+    name = "freebuilder",
+    exported_plugins = [
+        ":freebuilder_plugin",
+    ],
+    exports = [
+        "//third-party/generated/deps/org/inferred:freebuilder",
+    ],
+)
