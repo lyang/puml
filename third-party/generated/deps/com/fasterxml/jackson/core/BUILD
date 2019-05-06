@@ -1,7 +1,7 @@
 java_library(
     name = "jackson_annotations",
     visibility = [
-        "//third-party/generated/deps:__subpackages__",
+        "//visibility:public",
     ],
     exports = [
         "//external:jar/com/fasterxml/jackson/core/jackson_annotations",
@@ -21,7 +21,7 @@ java_library(
 java_library(
     name = "jackson_databind",
     visibility = [
-        "//third-party/generated/deps:__subpackages__",
+        "//visibility:public",
     ],
     exports = [
         ":jackson_annotations",

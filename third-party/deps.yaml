@@ -8,6 +8,12 @@ options:
   thirdPartyDirectory: "third-party/generated/deps"
 
 dependencies:
+  com.fasterxml.jackson.core:
+    jackson:
+      lang: java
+      modules: [ "annotations", "databind" ]
+      version: "2.9.8"
+
   com.squareup.okhttp3:
     okhttp:
       lang: java
