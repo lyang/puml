@@ -51,6 +51,12 @@ Run it locally:
 ```
 bazel run //:puml -- server ${PWD}/config.yaml
 ```
+To update dependency version, edit `third-party/deps.yaml`. To add new dependencies:
+```
+./script/deps.sh add <maven-coordinate>
+```
+For IDE, I use IntelliJ CE + [bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel)
+
 ### Docker
 Prebuilt images are at: `linyang1218/puml:latest` (Docker Hub)
 
@@ -62,3 +68,6 @@ Push the image
 ```
 bazel run //:docker-push
 ```
+
+## Deployment
+A demo app is deployed to https://puml-demo.herokuapp.com via `.travis.yml`
