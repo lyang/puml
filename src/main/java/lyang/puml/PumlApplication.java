@@ -24,7 +24,7 @@ public class PumlApplication extends Application<PumlConfiguration> {
     bootstrap.addBundle(guiceBundle);
     SubstitutingSourceProvider sourceProvider =
         new SubstitutingSourceProvider(bootstrap.getConfigurationSourceProvider(),
-            new EnvironmentVariableSubstitutor());
+            new EnvironmentVariableSubstitutor(false));
     bootstrap.setConfigurationSourceProvider(sourceProvider);
   }
 
