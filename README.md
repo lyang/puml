@@ -1,8 +1,10 @@
-# puml
-Render diagrams from the Internet using [plantuml](https://github.com/plantuml/plantuml).
+# Puml
+A java app for rendering [plantuml](https://github.com/plantuml/plantuml) diagrams sourced from the Internet.
 
-## From the Internet
-### Defaults to first diagram
+## Usage
+*Pattern*: https://\<host>/raw/\<url-encoded-target-address>
+  
+*Example*: https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2FREADME.md
 ```
 @startuml
 puml->World: Hello
@@ -11,7 +13,9 @@ caption Generated at %date[yyyy-MM-dd HH:mm:ss z]%
 ```
 [![demo](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2FREADME.md)](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2FREADME.md)
 
-### Multiple diagrams support via `pumlIndex`(zero based) query param
+*Pattern*: https://\<host>/raw/\<url-encoded-target-address>?pumlIndex=1
+
+*Example*: https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2FREADME.md?pumlIndex=1
 ```
 @startuml
 
@@ -30,7 +34,31 @@ caption Generated at %date[yyyy-MM-dd HH:mm:ss z]%
 ```
 [![demo](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2FREADME.md?pumlIndex=1)](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2FREADME.md?pumlIndex=1)
 
-## From protected sources
+### Rendering protected sources
 Protected sources can be accessed by setting up credentials in config file, for [example](https://github.com/lyang/puml/blob/master/puml-demo.yaml)
 
 [![demo](http://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml-demo%2Fmaster%2FREADME.md)](http://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml-demo%2Fmaster%2FREADME.md)
+
+## Development
+Dependency: `bazel-0.21.0`, `graphviz`
+
+### Java
+Building the fat jar:
+```
+bazel build //:puml_deploy.jar
+```
+Run it locally:
+```
+bazel run //:puml -- server ${PWD}/config.yaml
+```
+### Docker
+Prebuilt images are at: `linyang1218/puml:latest` (Docker Hub)
+
+Building the image locally
+```
+bazel run //:docker
+```
+Push the image
+```
+bazel run //:docker-push
+```
