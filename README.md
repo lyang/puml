@@ -1,4 +1,4 @@
-# Puml
+# Puml [![Build Status](https://travis-ci.com/lyang/puml.svg?branch=master)](https://travis-ci.com/lyang/puml)
 A java app for rendering [plantuml](https://github.com/plantuml/plantuml) diagrams sourced from the Internet.
 
 ## Usage
