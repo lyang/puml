@@ -34,7 +34,7 @@ java_library(
 java_library(
     name = "slf4j_api",
     visibility = [
-        "//third-party/generated/deps:__subpackages__",
+        "//visibility:public",
     ],
     exports = [
         "//external:jar/org/slf4j/slf4j_api",
