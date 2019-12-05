@@ -4,7 +4,7 @@ jdk:
 services:
   - docker
 env:
-  - BAZEL_VERSION=0.21.0
+  - BAZEL_VERSION=0.25.2
 jobs:
   include:
     - stage: build
