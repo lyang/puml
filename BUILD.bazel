@@ -1,4 +1,19 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image", "container_push")
+load("@bazel_tools//tools/jdk:default_java_toolchain.bzl", "JDK8_JVM_OPTS", "default_java_toolchain")
+
+default_java_toolchain(
+    name = "java_toolchain",
+    bootclasspath = ["@bazel_tools//tools/jdk:platformclasspath"],
+    jvm_opts = JDK8_JVM_OPTS,
+    source_version = "8",
+    target_version = "8",
+    visibility = ["//visibility:public"],
+    xlint = [
+        "all",
+        "-processing",
+        "-serial",
+    ],
+)
 
 java_binary(
     name = "puml",
