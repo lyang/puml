@@ -47,6 +47,6 @@ public class ProxyAuthenticator extends Authenticator {
   }
 
   private static String getProxySetting(String protocol, String property) {
-    return System.getProperty(protocol + "." + property);
+    return System.getProperty(protocol.toLowerCase() + ".proxy" + property);
   }
 }
