@@ -1,7 +1,5 @@
 package lyang.puml;
 
-import java.net.Authenticator;
-
 import com.google.inject.Injector;
 
 import io.dropwizard.Application;
@@ -11,7 +9,6 @@ import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import lyang.puml.resources.RawResource;
-import lyang.puml.utils.ProxyAuthenticator;
 import ru.vyarus.dropwizard.guice.GuiceBundle;
 
 public class PumlApplication extends Application<PumlConfiguration> {
@@ -19,7 +16,7 @@ public class PumlApplication extends Application<PumlConfiguration> {
   private GuiceBundle<Configuration> guiceBundle;
 
   public static void main(String[] args) throws Exception {
-    Authenticator.setDefault(new ProxyAuthenticator());
+//    Authenticator.setDefault(new ProxyAuthenticator());
     new PumlApplication().run(args);
   }
 
