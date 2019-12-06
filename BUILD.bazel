@@ -22,8 +22,34 @@ java_binary(
 )
 
 container_image(
-    name = "docker",
-    base = "@base//image",
+    name = "openjdk8-image",
+    base = "@openjdk8//image",
+    cmd = [
+        "server",
+        "config.yaml",
+    ],
+    directory = "/app",
+    entrypoint = [
+        "./app.sh",
+    ],
+    files = [
+        ":app.sh",
+        ":config.yaml",
+        ":puml",
+        ":puml_deploy.jar",
+    ],
+    ports = [
+        "8080",
+        "8081",
+    ],
+    repository = "puml",
+    stamp = True,
+    workdir = "/app",
+)
+
+container_image(
+    name = "openjdk11-image",
+    base = "@openjdk11//image",
     cmd = [
         "server",
         "config.yaml",
@@ -48,10 +74,19 @@ container_image(
 )
 
 container_push(
-    name = "docker-push",
+    name = "openjdk8-image-push",
     format = "Docker",
-    image = ":docker",
+    image = ":openjdk8-image",
     registry = "index.docker.io",
     repository = "linyang1218/puml",
-    tag = "{STABLE_BUILD_REVISION}",
+    tag = "openjdk8",
+)
+
+container_push(
+    name = "openjdk11-image-push",
+    format = "Docker",
+    image = ":openjdk11-image",
+    registry = "index.docker.io",
+    repository = "linyang1218/puml",
+    tag = "openjdk11",
 )

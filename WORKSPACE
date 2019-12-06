@@ -24,8 +24,15 @@ load(
 )
 
 container_pull(
-    name = "base",
+    name = "openjdk8",
     registry = "index.docker.io",
     repository = "linyang1218/java-graphviz",
-    tag = "latest",
+    tag = "8-stretch",
+)
+
+container_pull(
+    name = "openjdk11",
+    registry = "index.docker.io",
+    repository = "linyang1218/java-graphviz",
+    tag = "11-stretch",
 )
