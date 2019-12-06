@@ -59,6 +59,11 @@ dependencies:
       lang: java
       version: "2.3.0"
 
+  org.slf4j:
+    slf4j-api:
+      lang: java
+      version: "1.7.29"
+
   ru.vyarus:
     dropwizard-guicey:
       lang: java
