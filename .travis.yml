@@ -1,19 +1,24 @@
 language: java
 jdk:
   - openjdk8
+  - openjdk11
 services:
   - docker
 env:
   - BAZEL_VERSION=0.25.2
-stages:
-  - name: deploy
-    if: branch = master AND env(TRAVIS_PULL_REQUEST) = "false" AND env(TRAVIS_JDK_VERSION) = openjdk8
-    script:
-      - curl https://cli-assets.heroku.com/install-ubuntu.sh | sh > /dev/null
-      - heroku container:login
-      - docker build --build-arg TAG=$TRAVIS_JDK_VERSION -t registry.heroku.com/$APP/web -f Dockerfile.heroku .
-      - docker push registry.heroku.com/$APP/web
-      - heroku container:release web --app $APP
+  - BAZEL_VERSION=0.21.0
+jobs:
+  allow_failures:
+    - jdk: openjdk11
+  include:
+    - stage: deploy
+      if: branch = master
+      script:
+        - curl https://cli-assets.heroku.com/install-ubuntu.sh | sh > /dev/null
+        - heroku container:login
+        - docker build --build-arg TAG=$TRAVIS_JDK_VERSION -t registry.heroku.com/$APP/web -f Dockerfile.heroku .
+        - docker push registry.heroku.com/$APP/web
+        - heroku container:release web --app $APP
 script:
   - |
     URL="https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
