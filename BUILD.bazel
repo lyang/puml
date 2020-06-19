@@ -1,20 +1,6 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image", "container_push")
 load("@bazel_tools//tools/jdk:default_java_toolchain.bzl", "JDK8_JVM_OPTS", "default_java_toolchain")
 
-default_java_toolchain(
-    name = "java_toolchain",
-    bootclasspath = ["@bazel_tools//tools/jdk:platformclasspath"],
-    jvm_opts = JDK8_JVM_OPTS,
-    source_version = "8",
-    target_version = "8",
-    visibility = ["//visibility:public"],
-    xlint = [
-        "all",
-        "-processing",
-        "-serial",
-    ],
-)
-
 java_binary(
     name = "puml",
     main_class = "lyang.puml.PumlApplication",
@@ -22,34 +8,8 @@ java_binary(
 )
 
 container_image(
-    name = "openjdk8-image",
-    base = "@openjdk8//image",
-    cmd = [
-        "server",
-        "config.yaml",
-    ],
-    directory = "/app",
-    entrypoint = [
-        "./app.sh",
-    ],
-    files = [
-        ":app.sh",
-        ":config.yaml",
-        ":puml",
-        ":puml_deploy.jar",
-    ],
-    ports = [
-        "8080",
-        "8081",
-    ],
-    repository = "puml",
-    stamp = True,
-    workdir = "/app",
-)
-
-container_image(
-    name = "openjdk11-image",
-    base = "@openjdk11//image",
+    name = "puml-image",
+    base = "@java-base//image",
     cmd = [
         "server",
         "config.yaml",
@@ -74,19 +34,10 @@ container_image(
 )
 
 container_push(
-    name = "openjdk8-image-push",
+    name = "puml-image-push",
     format = "Docker",
-    image = ":openjdk8-image",
+    image = ":puml-image",
     registry = "index.docker.io",
     repository = "linyang1218/puml",
-    tag = "openjdk8",
-)
-
-container_push(
-    name = "openjdk11-image-push",
-    format = "Docker",
-    image = ":openjdk11-image",
-    registry = "index.docker.io",
-    repository = "linyang1218/puml",
-    tag = "openjdk11",
+    tag = "{STABLE_BUILD_REVISION}",
 )

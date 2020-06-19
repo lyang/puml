@@ -8,15 +8,16 @@ maven_dependencies()
 git_repository(
     name = "io_bazel_rules_docker",
     remote = "https://github.com/bazelbuild/rules_docker.git",
-    tag = "v0.7.0",
+    tag = "v0.14.3",
 )
 
-load(
-    "@io_bazel_rules_docker//repositories:repositories.bzl",
-    container_repositories = "repositories",
-)
+load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
 
 container_repositories()
+
+load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
+
+container_deps()
 
 load(
     "@io_bazel_rules_docker//container:container.bzl",
@@ -24,14 +25,7 @@ load(
 )
 
 container_pull(
-    name = "openjdk8",
-    registry = "index.docker.io",
-    repository = "linyang1218/java-graphviz",
-    tag = "8-stretch",
-)
-
-container_pull(
-    name = "openjdk11",
+    name = "java-base",
     registry = "index.docker.io",
     repository = "linyang1218/java-graphviz",
     tag = "11-stretch",

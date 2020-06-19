@@ -1,3 +1,1 @@
 build --workspace_status_command=./script/get-workspace-status.sh
-build --host_javabase=@local_jdk//:jdk
-build --java_toolchain=//:java_toolchain
