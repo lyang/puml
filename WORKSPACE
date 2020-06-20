@@ -28,5 +28,5 @@ container_pull(
     name = "java-base",
     registry = "index.docker.io",
     repository = "linyang1218/java-graphviz",
-    tag = "11-stretch",
+    tag = "11-buster",
 )
