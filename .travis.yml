@@ -1,8 +1,6 @@
 language: java
 
-jdk:
-  - openjdk11
-  - oraclejdk11
+jdk: openjdk11
 
 services:
   - docker
@@ -17,6 +15,10 @@ addons:
 
 jobs:
   include:
+    - stage: build
+      script:
+        - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+        - bazel run //:puml-image-push
     - stage: deploy
       if: branch = master
       script:
@@ -26,6 +28,3 @@ jobs:
         - docker push registry.heroku.com/$APP/web
         - heroku container:release web --app $APP
 
-script:
-  - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-  - bazel run //:puml-image-push
