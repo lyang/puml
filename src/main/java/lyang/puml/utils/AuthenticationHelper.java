@@ -9,7 +9,7 @@ import okhttp3.Response;
 
 public class AuthenticationHelper implements Interceptor {
 
-  private List<Credential> credentials;
+  private final List<Credential> credentials;
 
   public AuthenticationHelper(List<Credential> credentials) {
     this.credentials = credentials;

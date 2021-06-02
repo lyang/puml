@@ -18,7 +18,7 @@ import okhttp3.Request;
 @Path("/raw/{url}")
 public class RawResource {
 
-  private OkHttpClient client;
+  private final OkHttpClient client;
 
   @Inject
   public RawResource(OkHttpClient client) {
