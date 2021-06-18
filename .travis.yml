@@ -5,20 +5,22 @@ jdk: openjdk11
 services:
   - docker
 
-addons:
-  apt:
-    sources:
-      - sourceline: 'deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8'
-        key_url: 'https://bazel.build/bazel-release.pub.gpg'
-    packages:
-      - bazel
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
 
 jobs:
   include:
     - stage: build
       script:
         - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-        - bazel run //:puml-image-push
+        - docker build -t linyang1218/puml:$TRAVIS_COMMIT .
+        - docker push linyang1218/puml:$TRAVIS_COMMIT
     - stage: deploy
       if: branch = master
       script:

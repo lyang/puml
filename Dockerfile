@@ -1,5 +1,7 @@
 FROM gradle:jdk11 AS builder
-COPY . /home/gradle/puml
+RUN mkdir /home/gradle/puml
+COPY *.gradle /home/gradle/puml/
+COPY src /home/gradle/puml/src
 WORKDIR /home/gradle/puml
 RUN gradle clean installDist
 
@@ -9,5 +11,5 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 COPY --from=builder /home/gradle/puml/build/install/puml /app
-ENTRYPOINT ["/app/bin/puml"]
-CMD ["server"]
+COPY config.yaml /app
+CMD ["/app/bin/puml", "server", "/app/config.yaml"]
