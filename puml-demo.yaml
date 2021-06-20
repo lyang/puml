@@ -9,4 +9,4 @@ credentials:
     headerName: Authorization
     headerValue: token ${PUML_DEMO_API_TOKEN}
     requestMatcher:
-      pattern: "^https://raw.githubusercontent.com/lyang/puml-demo/master/README.md$"
+      pattern: "^https://api.github.com/repos/lyang/puml-demo/contents/README.md\\?ref=master"
