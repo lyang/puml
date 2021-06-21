@@ -3,14 +3,12 @@ package lyang.puml;
 import com.google.inject.Injector;
 
 import io.dropwizard.Application;
-import io.dropwizard.Configuration;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import lyang.puml.resources.GitHubResource;
 import lyang.puml.resources.RawResource;
-import lyang.puml.resources.RefererResource;
 import ru.vyarus.dropwizard.guice.GuiceBundle;
 
 public class PumlApplication extends Application<PumlConfiguration> {
@@ -36,6 +34,5 @@ public class PumlApplication extends Application<PumlConfiguration> {
     Injector injector = guiceBundle.getInjector();
     environment.jersey().register(injector.getInstance(GitHubResource.class));
     environment.jersey().register(injector.getInstance(RawResource.class));
-    environment.jersey().register(injector.getInstance(RefererResource.class));
   }
 }
