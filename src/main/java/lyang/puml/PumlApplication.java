@@ -1,19 +1,13 @@
 package lyang.puml;
 
-import com.google.inject.Injector;
-
 import io.dropwizard.Application;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import lyang.puml.resources.GitHubResource;
-import lyang.puml.resources.RawResource;
 import ru.vyarus.dropwizard.guice.GuiceBundle;
 
 public class PumlApplication extends Application<PumlConfiguration> {
-
-  private GuiceBundle guiceBundle;
 
   public static void main(String[] args) throws Exception {
     new PumlApplication().run(args);
@@ -21,18 +15,17 @@ public class PumlApplication extends Application<PumlConfiguration> {
 
   @Override
   public void initialize(Bootstrap<PumlConfiguration> bootstrap) {
-    guiceBundle = GuiceBundle.builder().modules(new PumlModule()).build();
-    bootstrap.addBundle(guiceBundle);
+    bootstrap.addBundle(
+        GuiceBundle.builder()
+            .modules(new PumlModule())
+            .enableAutoConfig(getClass().getPackageName())
+            .build());
     SubstitutingSourceProvider sourceProvider =
-      new SubstitutingSourceProvider(bootstrap.getConfigurationSourceProvider(),
-                                     new EnvironmentVariableSubstitutor(false));
+        new SubstitutingSourceProvider(
+            bootstrap.getConfigurationSourceProvider(), new EnvironmentVariableSubstitutor(false));
     bootstrap.setConfigurationSourceProvider(sourceProvider);
   }
 
   @Override
-  public void run(PumlConfiguration configuration, Environment environment) {
-    Injector injector = guiceBundle.getInjector();
-    environment.jersey().register(injector.getInstance(GitHubResource.class));
-    environment.jersey().register(injector.getInstance(RawResource.class));
-  }
+  public void run(PumlConfiguration configuration, Environment environment) {}
 }
