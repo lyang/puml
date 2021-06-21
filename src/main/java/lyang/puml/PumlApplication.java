@@ -15,7 +15,7 @@ import ru.vyarus.dropwizard.guice.GuiceBundle;
 
 public class PumlApplication extends Application<PumlConfiguration> {
 
-  private GuiceBundle<Configuration> guiceBundle;
+  private GuiceBundle guiceBundle;
 
   public static void main(String[] args) throws Exception {
     new PumlApplication().run(args);
