@@ -6,3 +6,4 @@ server:
     - type: http
       port: ${PORT:-8080}
 credentials: []
+hostMappings: []
