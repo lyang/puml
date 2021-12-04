@@ -1,4 +1,4 @@
-# Puml [![Build Status](https://travis-ci.com/lyang/puml.svg?branch=master)](https://travis-ci.com/lyang/puml)
+# Puml [![Build Status](https://travis-ci.com/lyang/puml.svg?branch=master)](https://travis-ci.com/lyang/puml) ![CodeQL](https://github.com/lyang/puml/actions/workflows/codeql-analysis.yml/badge.svg)
 A java app for rendering [plantuml](https://github.com/plantuml/plantuml) diagrams sourced from the Internet.
 
 ## Usage
