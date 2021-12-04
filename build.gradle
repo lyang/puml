@@ -1,6 +1,6 @@
 plugins {
   id 'application'
-  id 'org.inferred.processors' version '3.3.0'
+  id 'org.inferred.processors' version '3.6.0'
 }
 
 repositories {
