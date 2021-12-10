@@ -9,6 +9,6 @@ credentials:
     headerName: Authorization
     headerValue: token ${PUML_DEMO_API_TOKEN}
     requestMatcher:
-      pattern: "^https://api.github.com/repos/lyang/puml-demo/contents/README.md\\?ref=master"
+      pattern: "^https://api.github.com/repos/lyang/puml-demo/contents/git(hub|lab).md\\?ref=master"
 hostMappings:
   ghe: github.com
