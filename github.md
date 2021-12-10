@@ -5,7 +5,7 @@
 *Example*: https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/github.md
 ```
 @startuml
-puml->World: Hello
+puml->GitHub: Hello
 caption Generated at %date("yyyy-MM-dd HH:mm:ss z")
 @enduml
 ```
@@ -19,11 +19,11 @@ caption Generated at %date("yyyy-MM-dd HH:mm:ss z")
 
 participant browser as b
 participant puml as p
-participant Internet as i
+participant GitHub as gh
 
 b->p: GET /github/lyang/puml/blob/master/github.md?pumlIndex=1
-p->i: GET https://api.github.com/
-i->p: Plain Text
+p->gh: GET https://api.github.com/
+gh->p: Plain Text
 p->b: PNG
 
 caption Generated at %date("yyyy-MM-dd HH:mm:ss z")
