@@ -2,7 +2,7 @@
 
 *Pattern*: /gitlab/projects/{repo}/files/{commit}/{path}
 
-*Example*: https://puml-demo.herokuapp.com/gitlab/32006361/files/master/gitlab.md
+*Example*: https://puml-demo.herokuapp.com/gitlab/projects/32006361/files/master/gitlab.md
 ```
 @startuml
 puml->GitLab: Hello
