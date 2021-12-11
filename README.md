@@ -2,59 +2,27 @@
 A java app for rendering [plantuml](https://github.com/plantuml/plantuml) diagrams sourced from the Internet.
 
 ## Usage
+
+### GitHub
 *Pattern*: /github/{owner}/{repo}/blob/{commit}/{path}
 
-*Example*: https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/README.md
-```
-@startuml
-puml->World: Hello
-caption Generated at %date("yyyy-MM-dd HH:mm:ss z")
-@enduml
-```
-[![demo](https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/README.md)](https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/README.md)
+*Example*: https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/github.md
 
-*Pattern*: /github/{owner}/{repo}/blob/{commit}/{path}?pumlIndex={n}
+[![demo](https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/github.md)](https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/github.md)
 
-*Example*: https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/README.md?pumlIndex=1
-```
-@startuml
+More examples can be found in [github.md](github.md)
 
-participant browser as b
-participant puml as p
-participant Internet as i
+### GitLab
+*Pattern*: /gitlab/projects/{repo}/files/{commit}/{path}
 
-b->p: GET /github/lyang/puml/blob/master/README.md?pumlIndex=1
-p->i: GET https://api.github.com/
-i->p: Plain Text
-p->b: PNG
+*Example*: https://puml-demo.herokuapp.com/gitlab/projects/32006361/files/master/gitlab.md
 
-caption Generated at %date("yyyy-MM-dd HH:mm:ss z")
+[![demo](https://puml-demo.herokuapp.com/gitlab/projects/32006361/files/master/gitlab.md)](https://puml-demo.herokuapp.com/gitlab/projects/32006361/files/master/gitlab.md)
 
-@enduml
-```
-[![demo](https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/README.md?pumlIndex=1)](https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/README.md?pumlIndex=1)
-
-### Rendering protected sources
-Protected sources can be accessed by setting up credentials in config file, for [example](https://github.com/lyang/puml/blob/master/puml-demo.yaml)
-
-*Example*: https://puml-demo.herokuapp.com/github/lyang/puml-demo/blob/master/README.md
-[![demo](https://puml-demo.herokuapp.com/github/lyang/puml-demo/blob/master/README.md)](https://puml-demo.herokuapp.com/github/lyang/puml-demo/blob/master/README.md)
-
-### Rendering for GitHub Enterprise Instances
-GHE instance, even multiple instances, are also supported, via [host mapping](puml-demo.yaml).
-
-*Pattern*: /github/{key}/{owner}/{repo}/blob/{branch}/{path}
-
-Host mapping for `{key}` needs to be configured in `config.yaml`, for [example](puml-demo.yaml).
-
-*Example*: https://puml-demo.herokuapp.com/github/ghe/lyang/puml-demo/blob/master/README.md
-[![demo](https://puml-demo.herokuapp.com/github/ghe/lyang/puml-demo/blob/master/README.md)](https://puml-demo.herokuapp.com/github/ghe/lyang/puml-demo/blob/master/README.md)
-
-**NOTE**: Unfortunately I don't have a GHE instance to properly demo this, so instead I'm mapping `ghe` to `github.com` for this case.
-
+More examples can be found in [gitlab.md](gitlab.md)
 
 ## Development
-Dependency: `gradle-7.1`, `graphviz`
+Dependency: `gradle-7.3.1`, `graphviz`
 
 ### Java
 Building the fat jar:
@@ -68,7 +36,7 @@ gradle run --args="server config.yaml"
 For IDE, I use IntelliJ CE
 
 ### Docker
-Prebuilt images are at: `linyang1218/puml:latest` (Docker Hub)
+Prebuilt images are at: `linyang1218/puml:{commit}` (Docker Hub)
 
 ## Deployment
 A demo app is deployed to https://puml-demo.herokuapp.com via `.travis.yml`
