@@ -18,7 +18,5 @@ public interface RequestMatcher {
     return Pattern.compile(getPattern()).matcher(request.url().toString()).matches();
   }
 
-  class Builder extends RequestMatcher_Builder {
-
-  }
+  class Builder extends RequestMatcher_Builder {}
 }

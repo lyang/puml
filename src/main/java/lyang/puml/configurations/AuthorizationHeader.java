@@ -23,7 +23,5 @@ public interface AuthorizationHeader extends Credential {
     return request.newBuilder().header(getHeaderName(), getHeaderValue()).build();
   }
 
-  class Builder extends AuthorizationHeader_Builder {
-
-  }
+  class Builder extends AuthorizationHeader_Builder {}
 }
