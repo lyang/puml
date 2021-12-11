@@ -33,6 +33,9 @@ For resources requiring authentication (like private repos), [Credential](src/ma
 
 Credentials will only be used when the configured url pattern matches the outbound request. Examples can be found in [puml-demo.yaml](puml-demo.yaml)
 
+## Proxy Authentication
+If proxy authentication is required, it auto retries the request using `http(s).proxyUser` and `http(s).proxyPassword` system property.
+
 ## Development
 Dependency: `gradle-7.3.1`, `graphviz`
 
