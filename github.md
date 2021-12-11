@@ -33,7 +33,7 @@ caption Generated at %date("yyyy-MM-dd HH:mm:ss z")
 [![demo](https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/github.md?pumlIndex=1)](https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/github.md?pumlIndex=1)
 
 ### Rendering protected sources
-Protected sources can be accessed by setting up credentials in config file, for [example](https://github.com/lyang/puml/blob/master/puml-demo.yaml)
+Protected sources can be accessed by setting up credentials in config file, for [example](puml-demo.yaml)
 
 *Example*: https://puml-demo.herokuapp.com/github/lyang/puml-demo/blob/master/github.md
 [![demo](https://puml-demo.herokuapp.com/github/lyang/puml-demo/blob/master/github.md)](https://puml-demo.herokuapp.com/github/lyang/puml-demo/blob/master/github.md)

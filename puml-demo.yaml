@@ -17,3 +17,4 @@ credentials:
       pattern: "^https://gitlab.com/api/v4/projects/32007598/repository/files/git(hub|lab).md\\?ref=master"
 hostMappings:
   ghe: github.com
+  gle: gitlab.com
