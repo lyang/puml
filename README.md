@@ -21,6 +21,13 @@ More examples can be found in [github.md](github.md)
 
 More examples can be found in [gitlab.md](gitlab.md)
 
+### Raw
+*Pattern*: /raw/{url}
+
+*Example*: https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2Fgithub.md
+
+[![demo](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2Fgithub.md)](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2Fgithub.md)
+
 ## Development
 Dependency: `gradle-7.3.1`, `graphviz`
 
