@@ -15,7 +15,7 @@ dependencies {
   implementation group:'javax.ws.rs', name:'javax.ws.rs-api', version:'2.1.1'
   implementation group:'net.sourceforge.plantuml', name:'plantuml', version:'1.2021.16'
   implementation group:'org.inferred', name:'freebuilder', version:'2.7.0'
-  implementation group:'ru.vyarus', name:'dropwizard-guicey', version:'5.4.0'
+  implementation group:'ru.vyarus', name:'dropwizard-guicey', version:'5.4.1'
   processor group:'org.inferred', name:'freebuilder', version:'2.7.0'
   testImplementation group: 'junit', name:'junit', version:'4.13.2'
 }
