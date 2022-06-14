@@ -9,7 +9,7 @@ repositories {
 
 dependencies {
   implementation group:'com.google.guava', name:'guava', version:'31.1-jre'
-  implementation group:'com.squareup.okhttp3', name:'okhttp', version:'4.9.3'
+  implementation group:'com.squareup.okhttp3', name:'okhttp', version:'4.10.0'
   implementation group:'io.dropwizard', name:'dropwizard-core', version:'2.1.0'
   implementation group:'javax.inject', name:'javax.inject', version:'1'
   implementation group:'javax.ws.rs', name:'javax.ws.rs-api', version:'2.1.1'
