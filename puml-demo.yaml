@@ -9,12 +9,12 @@ credentials:
     headerName: Authorization
     headerValue: token ${GITHUB_API_TOKEN}
     requestMatcher:
-      pattern: "^https://api.github.com/repos/lyang/puml-demo/contents/git(hub|lab).md\\?ref=master"
+      pattern: "^https://api.github.com/repos/lyang/puml-demo/contents/git(hub|lab).md\\?ref=main"
   - type: auth-header
     headerName: PRIVATE-TOKEN
     headerValue: ${GITLAB_API_TOKEN}
     requestMatcher:
-      pattern: "^https://gitlab.com/api/v4/projects/32007598/repository/files/git(hub|lab).md\\?ref=master"
+      pattern: "^https://gitlab.com/api/v4/projects/32007598/repository/files/git(hub|lab).md\\?ref=main"
 hostMappings:
   ghe: github.com
   gle: gitlab.com

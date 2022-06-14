@@ -6,27 +6,27 @@ A java app for rendering [plantuml](https://github.com/plantuml/plantuml) diagra
 ### GitHub
 *Pattern*: /github/{owner}/{repo}/blob/{commit}/{path}
 
-*Example*: https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/github.md
+*Example*: https://puml-demo.herokuapp.com/github/lyang/puml/blob/main/github.md
 
-[![demo](https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/github.md)](https://puml-demo.herokuapp.com/github/lyang/puml/blob/master/github.md)
+[![demo](https://puml-demo.herokuapp.com/github/lyang/puml/blob/main/github.md)](https://puml-demo.herokuapp.com/github/lyang/puml/blob/main/github.md)
 
 More examples can be found in [github.md](github.md)
 
 ### GitLab
 *Pattern*: /gitlab/projects/{repo}/files/{commit}/{path}
 
-*Example*: https://puml-demo.herokuapp.com/gitlab/projects/32006361/files/master/gitlab.md
+*Example*: https://puml-demo.herokuapp.com/gitlab/projects/32006361/files/main/gitlab.md
 
-[![demo](https://puml-demo.herokuapp.com/gitlab/projects/32006361/files/master/gitlab.md)](https://puml-demo.herokuapp.com/gitlab/projects/32006361/files/master/gitlab.md)
+[![demo](https://puml-demo.herokuapp.com/gitlab/projects/32006361/files/main/gitlab.md)](https://puml-demo.herokuapp.com/gitlab/projects/32006361/files/main/gitlab.md)
 
 More examples can be found in [gitlab.md](gitlab.md)
 
 ### Raw
 *Pattern*: /raw/{url}
 
-*Example*: https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2Fgithub.md
+*Example*: https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmain%2Fgithub.md
 
-[![demo](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2Fgithub.md)](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmaster%2Fgithub.md)
+[![demo](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmain%2Fgithub.md)](https://puml-demo.herokuapp.com/raw/https%3A%2F%2Fraw.githubusercontent.com%2Flyang%2Fpuml%2Fmain%2Fgithub.md)
 
 ## Authenticated Resources
 For resources requiring authentication (like private repos), [Credential](src/main/java/lyang/puml/configurations/Credential.java) can be configured for it. So far, only [AuthorizationHeader](src/main/java/lyang/puml/configurations/AuthorizationHeader.java) is implemented.
