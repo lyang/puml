@@ -1,15 +1,13 @@
 package lyang.puml.utils;
 
 import java.util.Objects;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import okhttp3.Authenticator;
 import okhttp3.Credentials;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.Route;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ProxyAuthenticator implements Authenticator {
   private static final Logger LOGGER = LoggerFactory.getLogger(ProxyAuthenticator.class);

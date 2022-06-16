@@ -19,7 +19,8 @@ public class Puml {
         .expires(EXPIRES);
   }
 
-  private static ByteArrayOutputStream renderToStream(String content, int index) throws IOException {
+  private static ByteArrayOutputStream renderToStream(String content, int index)
+      throws IOException {
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     new SourceStringReader(content).outputImage(outputStream, index);
     return outputStream;

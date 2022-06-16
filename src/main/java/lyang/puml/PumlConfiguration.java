@@ -1,12 +1,10 @@
 package lyang.puml;
 
-import java.util.List;
-import java.util.Map;
-
 import com.google.common.collect.ImmutableList;
-
 import com.google.common.collect.ImmutableMap;
 import io.dropwizard.Configuration;
+import java.util.List;
+import java.util.Map;
 import lyang.puml.configurations.Credential;
 
 public class PumlConfiguration extends Configuration {
