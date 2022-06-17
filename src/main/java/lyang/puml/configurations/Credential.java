@@ -6,12 +6,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import okhttp3.Request;
 
-@JsonTypeInfo(
-    use = Id.NAME,
-    property = "type"
-)
+@JsonTypeInfo(use = Id.NAME, property = "type")
 @JsonSubTypes({
-    @JsonSubTypes.Type(value = AuthorizationHeader.class, name = AuthorizationHeader.TYPE),
+  @JsonSubTypes.Type(value = AuthorizationHeader.class, name = AuthorizationHeader.TYPE),
 })
 public interface Credential {
 

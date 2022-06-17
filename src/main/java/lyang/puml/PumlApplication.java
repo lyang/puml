@@ -8,7 +8,6 @@ import io.dropwizard.setup.Environment;
 import ru.vyarus.dropwizard.guice.GuiceBundle;
 
 public class PumlApplication extends Application<PumlConfiguration> {
-
   public static void main(String[] args) throws Exception {
     new PumlApplication().run(args);
   }

@@ -8,7 +8,6 @@ import lyang.puml.utils.ProxyAuthenticator;
 import okhttp3.OkHttpClient;
 
 public class PumlModule extends AbstractModule {
-
   @Provides
   @Singleton
   OkHttpClient httpClient(AuthenticationHelper authenticationHelper) {

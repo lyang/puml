@@ -9,7 +9,6 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 import net.sourceforge.plantuml.SourceStringReader;
 
 public class Puml {
-
   private static final Date EXPIRES = new Date(Long.MIN_VALUE);
   private static final String NO_CACHE = "no-cache";
 
