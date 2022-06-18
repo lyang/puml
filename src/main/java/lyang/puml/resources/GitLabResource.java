@@ -33,7 +33,7 @@ public class GitLabResource extends GitResourceBase {
       @PathParam("path") String path,
       @QueryParam("pumlIndex") @DefaultValue("0") int pumlIndex)
       throws IOException {
-    return get(pumlIndex, GITLAB, repo, commit, path);
+    return get(pumlIndex, GITLAB, repo, path, commit);
   }
 
   @GET
@@ -46,7 +46,7 @@ public class GitLabResource extends GitResourceBase {
       @PathParam("path") String path,
       @QueryParam("pumlIndex") @DefaultValue("0") int pumlIndex)
       throws IOException {
-    return get(host, pumlIndex, repo, commit, path);
+    return get(host, pumlIndex, repo, path, commit);
   }
 
   @Override

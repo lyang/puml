@@ -36,7 +36,7 @@ public class GitHubResource extends GitResourceBase {
       @PathParam("path") String path,
       @QueryParam("pumlIndex") @DefaultValue("0") int pumlIndex)
       throws IOException {
-    return get(pumlIndex, GITHUB, owner, repo, commit, path);
+    return get(pumlIndex, GITHUB, owner, repo, path, commit);
   }
 
   @GET
@@ -50,7 +50,7 @@ public class GitHubResource extends GitResourceBase {
       @PathParam("path") String path,
       @QueryParam("pumlIndex") @DefaultValue("0") int pumlIndex)
       throws IOException {
-    return get(host, pumlIndex, owner, repo, commit, path);
+    return get(host, pumlIndex, owner, repo, path, commit);
   }
 
   @Override
