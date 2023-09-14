@@ -2,11 +2,11 @@ package lyang.puml.resources;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ObjectArrays;
+import jakarta.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.Map;
 import java.util.Objects;
-import javax.ws.rs.core.Response;
 import lyang.puml.PumlConfiguration;
 import lyang.puml.utils.Puml;
 import okhttp3.OkHttpClient;

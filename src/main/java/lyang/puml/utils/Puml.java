@@ -1,20 +1,21 @@
 package lyang.puml.utils;
 
+import jakarta.ws.rs.core.CacheControl;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.ResponseBuilder;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Date;
-import javax.ws.rs.core.CacheControl;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.ResponseBuilder;
 import net.sourceforge.plantuml.SourceStringReader;
 
 public class Puml {
   private static final Date EXPIRES = new Date(Long.MIN_VALUE);
-  private static final String NO_CACHE = "no-cache";
 
   public static ResponseBuilder renderToResponse(String content, int index) throws IOException {
+    CacheControl cacheControl = new CacheControl();
+    cacheControl.setNoCache(true);
     return Response.ok(renderToStream(content, index).toByteArray())
-        .cacheControl(CacheControl.valueOf(NO_CACHE))
+        .cacheControl(cacheControl)
         .expires(EXPIRES);
   }
 

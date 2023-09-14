@@ -14,11 +14,7 @@ public class PumlApplication extends Application<PumlConfiguration> {
 
   @Override
   public void initialize(Bootstrap<PumlConfiguration> bootstrap) {
-    bootstrap.addBundle(
-        GuiceBundle.builder()
-            .modules(new PumlModule())
-            .enableAutoConfig(getClass().getPackageName())
-            .build());
+    bootstrap.addBundle(GuiceBundle.builder().modules(new PumlModule()).enableAutoConfig().build());
     SubstitutingSourceProvider sourceProvider =
         new SubstitutingSourceProvider(
             bootstrap.getConfigurationSourceProvider(), new EnvironmentVariableSubstitutor(false));

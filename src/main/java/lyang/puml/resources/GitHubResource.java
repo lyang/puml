@@ -1,21 +1,22 @@
 package lyang.puml.resources;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.DefaultValue;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.HttpHeaders;
+import jakarta.ws.rs.core.Response;
 import java.io.IOException;
-import javax.inject.Inject;
-import javax.ws.rs.DefaultValue;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.Response;
 import lyang.puml.PumlConfiguration;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
 @Path("/github")
+@Produces("image/png")
 public class GitHubResource extends GitResourceBase {
   public static final String GH_API = "https://api.%s/repos/%s/%s/contents/%s?ref=%s";
   public static final String GH_JSON = "application/vnd.github.v3+json";
@@ -27,7 +28,6 @@ public class GitHubResource extends GitResourceBase {
   }
 
   @GET
-  @Produces("image/png")
   @Path("/{owner}/{repo}/blob/{commit}/{path:.+}")
   public Response get(
       @PathParam("owner") String owner,
@@ -40,7 +40,6 @@ public class GitHubResource extends GitResourceBase {
   }
 
   @GET
-  @Produces("image/png")
   @Path("{host}/{owner}/{repo}/blob/{commit}/{path:.+}")
   public Response get(
       @PathParam("host") String host,
