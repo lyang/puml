@@ -1,4 +1,4 @@
-# Puml [![Build](https://github.com/lyang/puml/actions/workflows/build.yml/badge.svg)](https://github.com/lyang/puml/actions/workflows/build.yml) ![CodeQL](https://github.com/lyang/puml/actions/workflows/codeql-analysis.yml/badge.svg) [![Maintainability](https://api.codeclimate.com/v1/badges/1c8292cb6b9e937d5c53/maintainability)](https://codeclimate.com/github/lyang/puml/maintainability)
+# Puml [![Build](https://github.com/lyang/puml/actions/workflows/build.yml/badge.svg)](https://github.com/lyang/puml/actions/workflows/build.yml) [![CodeQL](https://github.com/lyang/puml/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/lyang/puml/actions/workflows/github-code-scanning/codeql) [![Maintainability](https://api.codeclimate.com/v1/badges/1c8292cb6b9e937d5c53/maintainability)](https://codeclimate.com/github/lyang/puml/maintainability)
 A java app for rendering [plantuml](https://github.com/plantuml/plantuml) diagrams sourced from the Internet.
 
 ## Usage
