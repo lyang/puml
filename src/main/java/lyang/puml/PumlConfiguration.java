@@ -2,7 +2,7 @@ package lyang.puml;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import io.dropwizard.Configuration;
+import io.dropwizard.core.Configuration;
 import java.util.List;
 import java.util.Map;
 import lyang.puml.configurations.Credential;
