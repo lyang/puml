@@ -1,3 +1,0 @@
-ARG TAG=latest
-FROM linyang1218/puml:${TAG}
-COPY puml-demo.yaml /app/config.yaml
