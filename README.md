@@ -51,4 +51,4 @@ gradle run --args="server config.yaml"
 For IDE, I use IntelliJ CE
 
 ### Docker
-Prebuilt images are at: `linyang1218/puml` (Docker Hub
+Prebuilt images are at: `linyang1218/puml` [Docker Hub](https://hub.docker.com/r/linyang1218/puml)
