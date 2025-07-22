@@ -1,7 +1,7 @@
 plugins {
     id 'application'
     id 'org.inferred.processors' version '3.7.0'
-    id "com.diffplug.spotless" version "7.0.3"
+    id "com.diffplug.spotless" version "7.2.1"
 }
 
 repositories {
