@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.google.guava:guava:33.4.8-jre'
+    implementation 'com.google.guava:guava:33.5.0-jre'
     implementation 'com.squareup.okhttp3:okhttp:5.2.1'
     implementation 'io.dropwizard:dropwizard-core:5.0.0'
     implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
