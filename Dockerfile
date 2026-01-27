@@ -1,11 +1,11 @@
-FROM gradle:jdk11 AS builder
+FROM gradle:jdk17 AS builder
 RUN mkdir /home/gradle/puml
 COPY *.gradle /home/gradle/puml/
 COPY src /home/gradle/puml/src
 WORKDIR /home/gradle/puml
 RUN gradle clean installDist
 
-FROM openjdk:11-buster
+FROM eclipse-temurin:17-jre
 RUN apt-get update && \
     apt-get install -y --no-install-recommends graphviz unifont && \
     apt-get clean && \
