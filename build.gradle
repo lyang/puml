@@ -12,7 +12,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:5.3.2'
     implementation 'io.dropwizard:dropwizard-core:5.0.1'
     implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
-    implementation 'net.sourceforge.plantuml:plantuml:1.2026.1'
+    implementation 'net.sourceforge.plantuml:plantuml:1.2026.2'
     implementation 'org.inferred:freebuilder:2.8.0'
     implementation 'ru.vyarus:dropwizard-guicey:8.0.2'
     annotationProcessor 'org.inferred:freebuilder:2.8.0'
