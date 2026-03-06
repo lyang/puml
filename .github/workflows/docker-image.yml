@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: login
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           username: linyang1218
           password: ${{ secrets.DOCKERHUB_TOKEN }}
